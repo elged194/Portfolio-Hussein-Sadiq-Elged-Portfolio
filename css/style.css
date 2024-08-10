@@ -175,6 +175,11 @@ svg text {
   box-shadow: none;
 }
 
+.bx-menu-alt-right{
+  color: #fff;
+  font-size: 30px;
+}
+
 /* ------------ End NavBar ------------------ */
 
 /* ------------ Start header -------------------*/
