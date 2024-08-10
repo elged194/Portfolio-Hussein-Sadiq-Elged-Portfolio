@@ -228,7 +228,7 @@ skills_page.innerHTML += skillsItems
       <div class="item">
         ${item.icon}
         <div class="ms-2">
-          <p class="fw-bold" >${item.name}</p>
+          <p class="fw-bold titel-skil" >${item.name}</p>
           <p>${item.description}</p>
         </div>
       </div>
