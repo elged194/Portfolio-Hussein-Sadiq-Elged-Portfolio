@@ -1,0 +1,609 @@
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.row {
+  margin: 0 !important;
+}
+
+img {
+  max-width: 100%;
+}
+
+.title {
+  color: #495057;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.title span {
+  color: #d36217;
+}
+
+section {
+  margin: 100px 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1,
+h2 {
+  font-family: "Russo One", sans-serif;
+}
+
+/* animated */
+.animated {
+  animation-delay: 1.5s;
+}
+
+i {
+  cursor: pointer;
+}
+
+.Skills svg {
+  width: 60px !important;
+  padding: 5px;
+}
+
+/* --------------------------- preloader ------------------------------ */
+/* Add this CSS to disable scrolling when body has 'no-scroll' class */
+body.no-scroll {
+  overflow: hidden;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+.wrapper {
+  background-color: #ffffff;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999999;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.preloader .wrapper {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+svg {
+  font-family: "Russo One", sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+svg text {
+  animation: stroke 5s infinite alternate;
+  stroke-width: 2;
+  stroke: #495057;
+  font-size: 100px;
+}
+
+@keyframes stroke {
+  0% {
+    fill: rgba(73, 80, 87, 0);
+    stroke: rgba(73, 80, 87, 1);
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 2;
+  }
+
+  70% {
+    fill: rgba(73, 80, 87, 0);
+    stroke: rgba(73, 80, 87, 1);
+  }
+
+  80% {
+    fill: rgba(73, 80, 87, 0);
+    stroke: rgba(73, 80, 87, 1);
+    stroke-width: 3;
+  }
+
+  100% {
+    fill: rgba(73, 80, 87, 1);
+    stroke: rgba(73, 80, 87, 0);
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+  }
+}
+
+/* --------------------------- preloader ------------------------------ */
+
+/* ------------ Start NavBar ------------- */
+.navbar-expand-lg .navbar-collapse {
+  justify-content: end;
+}
+
+.container-fluid {
+  padding: 0 15px !important;
+}
+
+.navbar.navbar-expand-lg.bg-body-tertiary {
+  background: #495057 !important;
+  padding: 0px 10px;
+}
+
+.bg-body-tertiary .nav-link {
+  color: #fff;
+  font-size: 18px;
+  font-family: "Russo One", sans-serif;
+}
+
+.bg-body-tertiary .nav-link:hover {
+  color: #db671a;
+}
+
+.bg-body-tertiary .navbar-brand {
+  color: #fff !important;
+  width: 25%;
+}
+
+.bg-body-tertiary .navbar-brand img {
+  height: 65px;
+}
+
+.fixed {
+  position: fixed !important;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: all 1s;
+}
+
+#mainNav {
+  transition: all 1s;
+}
+
+.nav-link:focus-visible {
+  box-shadow: none;
+}
+
+/* ------------ End NavBar ------------------ */
+
+/* ------------ Start header -------------------*/
+header {
+  position: relative;
+  margin-top: -1px;
+  padding-bottom: 50px;
+  margin-bottom: 200px;
+}
+
+header .background-header {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #495057;
+  clip-path: polygon(0 0%, 100% 0, 100% 1%, 0 100%);
+  z-index: -1;
+}
+
+header .img-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+header .img-header .img {
+  width: 50%;
+  height: 85%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f8f9fa;
+  box-shadow: 1px 1px 1px 9px #495057;
+}
+
+header .text-heder {
+  display: flex;
+  padding-top: 65px;
+  align-items: center;
+}
+
+header .text-heder .text h1,
+header .text-heder h3 {
+  color: #db671a;
+  font-weight: bold;
+  font-family: "Russo One", sans-serif;
+}
+
+header .text-heder .font {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+}
+
+header .text-heder .font i {
+  padding: 10px;
+  font-size: 30px;
+  border: solid 1px #db671a;
+  color: #db671a;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+/* ------------ End header -------------------*/
+
+/* --------------- Start About ------------- */
+.About img {
+  width: 100%;
+}
+
+.About .About-img {
+  display: flex;
+  justify-content: center;
+}
+
+.About .about-img {
+  background-color: #b96025;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  width: 91%;
+}
+
+.About .text-About .text .p {
+  font-size: 20px;
+}
+
+.About .text-About {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.About tr {
+  border-style: hidden;
+}
+
+/* #6c757d */
+.About .btn {
+  background-color: #495057;
+  padding: 8px 10px;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+}
+
+.About .btn:hover {
+  background-color: transparent !important;
+  color: #495057;
+  border: 1px solid #495057;
+}
+
+/* modl */
+.About .modal i {
+  font-size: 30px;
+  color: #495057;
+}
+
+.About .modal .row h4 {
+  text-align: center;
+  margin: 0;
+}
+
+.About .modal .row i {
+  font-size: 25px !important;
+}
+
+.About .modal .row hr {
+  margin: 7px 0 !important;
+}
+
+/* --------------- End About ------------- */
+
+/* --------------- Start Skills ---------- */
+
+.Skills .item {
+  display: flex;
+  align-items: center;
+  border: solid 1px #495057;
+  color: #495057;
+  border-radius: 5px;
+  transition: all 1s;
+  cursor: pointer;
+}
+
+.Skills .item:hover {
+  background-color: #495057;
+  color: #fff;
+}
+
+.Skills p {
+  margin: 0;
+}
+
+.Skills i {
+  padding: 10px 15px;
+  font-size: 40px;
+}
+
+.Skills .col-md-4 {
+  padding: 10px 5px;
+}
+
+/* --------------- End Skills ---------- */
+/* --------------- Projects --------------*/
+.Projects .card {
+  border: none;
+  position: relative;
+  overflow: hidden;
+  background-color: #495057;
+  transition: all 1s;
+  margin: 8px 0;
+}
+
+.Projects .card img {
+  opacity: 0.7;
+  object-fit: cover;
+  padding: 15px;
+  max-height: 250px;
+  min-height: 250px;
+  transition: all 1s;
+  mix-blend-mode: hard-light;
+}
+
+.Projects .btn {
+  background-color: #495057;
+  color: #fff;
+  border-radius: 0;
+  padding: 5px 15px;
+  border: none;
+}
+
+.Projects .modal .btn {
+  border: 5px;
+}
+
+.Projects .modal .btn:hover {
+  background-color: #6c757d;
+}
+
+.Projects .card .bt {
+  background-color: transparent;
+  color: #959274;
+  border: solid 1px #8e8c70;
+}
+
+.Projects .card .card-body {
+  background-color: #fff;
+  /* margin-top: -120px; */
+  z-index: 1;
+  padding: 8px;
+}
+
+.Projects .card .card-body p {
+  font-size: 13px;
+}
+
+.Projects .card .card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.Projects .card .card-title .fa-solid {
+  color: #495057;
+}
+
+/* modal */
+.Projects .modal .Right-Bar .head-Nav img {
+  width: 18%;
+}
+
+.Projects .modal .Right-Bar .head-Nav .fa-solid,
+.Projects .modal .Right-Bar .head-Nav .fa-brands {
+  font-size: 35px;
+  color: #52534b;
+}
+
+.Projects .modal .Right-Bar .head-Nav {
+  display: flex;
+  border-bottom: 1px solid gray;
+  padding: 10px 0;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.Projects .modal .Right-Bar .head-Nav h4 {
+  margin: 0 5px;
+  border-left: 5px solid #92d200;
+  padding: 0 5px;
+}
+
+.Projects .modal .Right-Bar .head-Nav .law {
+  border-left: 5px solid #52534b;
+}
+
+.Projects .modal .tools h6 {
+  background-color: #dee2e6;
+  padding: 10px 15px;
+  display: inline-block;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.Projects .modal .tools h4 {
+  border-bottom: 1px solid #adb5bd;
+  margin-bottom: 15px;
+}
+
+.Projects .modal .img-Nav h4 {
+  color: #495057;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 5px;
+  margin: 15px 0;
+  display: inline-block;
+}
+
+.Projects .modal .img-Nav h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  background-color: #495057;
+  height: 2px;
+}
+
+/* --------------- Projects --------------*/
+/* --------------- form ---------------*/
+.Contact {
+  box-shadow: 0px 0px 4px 0px;
+  padding: 0px;
+  border-radius: 16px;
+}
+
+.Contact .Contact-lf {
+  padding-left: 0;
+}
+
+.Contact p {
+  font-size: 20px;
+}
+
+.Contact .font i {
+  font-size: 25px;
+  padding: 12px;
+  border: solid 1px #495057;
+  color: #495057;
+  border-radius: 10px;
+  margin: 0 4px 15px 4px;
+}
+
+.Contact .font {
+  text-align: center;
+}
+
+.Contact form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 39px;
+}
+
+.Contact .form-control:focus {
+  border-color: #495057;
+  box-shadow: 0 0 0 0.15rem #495057;
+}
+
+.Contact .form-control {
+  border: solid 1px #495057;
+}
+
+.Contact .btn {
+  width: 100%;
+  /* border-radius: 0; */
+  background-color: #6c757d;
+  border: solid 1px #6c757d;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+.Contact .btn:hover {
+  background-color: transparent;
+  border: solid 1px #495057;
+}
+
+.Contact .form-floating>label {
+  color: #495057;
+}
+
+.Contact .text-Contact {
+  height: 600px;
+  width: 100%;
+  background: linear-gradient(to right, #495057, #6c757d);
+  border-radius: 15px 150px 150px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 15px;
+}
+
+.Contact .text-Contact .text {
+  text-align: center;
+}
+
+/* --------------- form ---------------*/
+/*  */
+footer {
+  background-color: #495057;
+  color: #fff;
+  padding: 15px;
+}
+
+footer h2 {
+  font-size: 27px;
+  font-family: "Russo One", sans-serif;
+}
+
+footer .row i {
+  font-size: 26px;
+  padding: 10px;
+  margin: 0px 2px;
+  border-radius: 10px;
+  border: solid 1px;
+}
+
+footer .row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+footer .row div {
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer hr {
+  width: 70%;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+/* -------------- scroll-up ------------- */
+.scroll-up-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  display: none;
+  font-size: 24px;
+  color: rgb(108 117 125);
+  background-color: transparent;
+  border: 2px solid #6c757d;
+  padding: 1px 8px;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+/* -------------- scroll-up ------------- */
