@@ -241,6 +241,8 @@ skills_page.innerHTML += skillsItems
 
 /* -------------- / Projects Items / ------------- */
 const Projects_Page = document.querySelector("#Projects .row");
+
+// Projects Items
 const ProjectsItems = [
   // VIX Template
   {
@@ -452,40 +454,34 @@ const ProjectsItems = [
   },
 ];
 
+// paginate
+
 Projects_Page.innerHTML += ProjectsItems.map((item) => {
   return `
-    <div class="col-lg-4 col-md-6 col-12">
-      <div class="card">
-        <img src="${item.image}" class="card-img-top" alt="..." />
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card">
+            <img src="${item.image}" class="card-img-top" alt="${item.title}" />
 
-        <div class="card-body">
-          <div class="card-title">
-            <h5 class="">${item.title}</h5>
-            <div>
-              <i class="bx bx-star"></i>
-              <i class="bx bx-star"></i>
-              <i class="bx bx-star"></i>
-              <i class="bx bx-star"></i>
-              <i class="bx bx-star-half-stroke"></i>
+            <div class="card-body">
+              <div class="card-title">
+                <h5 class="">${item.title}</h5>
+                <div>
+                  <i class="bx bx-star"></i>
+                  <i class="bx bx-star"></i>
+                  <i class="bx bx-star"></i>
+                  <i class="bx bx-star"></i>
+                  <i class="bx bx-star-half-stroke"></i>
+                </div>
+              </div>
+              <p class="card-text">
+                ${item.description}
+              </p>
+              <a class="btn" href="${item.link_Live}">GO Live Demo</a>
+              <a class="btn bt" data-bs-toggle="modal" data-bs-target="${item.data_target}" href="">Go Viewing</a>
             </div>
           </div>
-          <p class="card-text">
-            ${item.description}
-          </p>
-          <a class="btn" href="${item.link_Live}"
-            >GO Live Demo</a
-          >
-          <a
-            class="btn bt"
-            data-bs-toggle="modal"
-            data-bs-target="${item.data_target}"
-            href=""
-            >Go Viewing</a
-          >
         </div>
-      </div>
-    </div>
-  `;
+      `;
 }).join("");
 
 /* -------------- / Projects Items / ------------- */
