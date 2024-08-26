@@ -917,10 +917,15 @@ let itemsPerPage = 3;
 let currentPage = 1;
 const totalPages = Math.ceil(ProjectsItems.length / itemsPerPage);
 
-
+// تقسيم العناصر إلى صفحات
 const paginate = (items, pageNumber, itemsPerPage) => {
+  // حساب بداية الصفحة: (رقم الصفحة - 1) * عدد العناصر لكل صفحة
   const start = (pageNumber - 1) * itemsPerPage;
+
+  // حساب نهاية الصفحة: بداية الصفحة + عدد العناصر لكل صفحة
   const end = start + itemsPerPage;
+
+  // إعادة جزء من العناصر من البداية إلى النهاية (العناصر في الصفحة الحالية)
   return items.slice(start, end);
 };
 
@@ -962,39 +967,99 @@ const updatePaginationButtons = () => {
   renderPageNumbers();
 };
 
+// Render Page Numbers
 const renderPageNumbers = () => {
+  // تفريغ محتوى عنصر الأرقام حتى يتم إعادة تعبئته بالأرقام الجديدة
   pageNumbersContainer.innerHTML = "";
-  for (let i = 1; i <= totalPages; i++) {
-    const pageNumber = document.createElement("span");
-    pageNumber.textContent = i;
-    if (i === currentPage) {
-      pageNumber.classList.add("active");
+
+  // إذا كان إجمالي الصفحات أقل من أو يساوي 3، قم بإظهار جميع الأرقام
+  if (totalPages <= 3) {
+    for (let i = 1; i <= totalPages; i++) {
+      const pageNumber = document.createElement("span");
+      pageNumber.textContent = i;
+
+      // إضافة الفئة 'active' للصفحة الحالية
+      if (i === currentPage) {
+        pageNumber.classList.add("active");
+      }
+
+      // إضافة مستمع للضغط على كل رقم للانتقال للصفحة المعنية
+      pageNumber.addEventListener("click", () => {
+        currentPage = i;
+        renderItems(currentPage); // عرض العناصر الجديدة للصفحة
+        updatePaginationButtons(); // تحديث حالة أزرار الترقيم
+      });
+      pageNumbersContainer.appendChild(pageNumber); // إضافة الرقم إلى عنصر الأرقام
     }
-    pageNumber.addEventListener("click", () => {
-      currentPage = i;
-      renderItems(currentPage);
-      updatePaginationButtons();
-    });
-    pageNumbersContainer.appendChild(pageNumber);
+  } else {
+    // إذا كان إجمالي الصفحات أكبر من 3، قم بإظهار الأرقام بشكل ديناميكي
+
+    // إظهار الصفحة الأولى إذا لم تكن الصفحة الحالية هي الأولى
+    if (currentPage > 1) {
+      const firstPage = document.createElement("span");
+      firstPage.textContent = "1";
+      firstPage.addEventListener("click", () => {
+        currentPage = 1;
+        renderItems(currentPage);
+        updatePaginationButtons();
+      });
+      pageNumbersContainer.appendChild(firstPage);
+    }
+
+    // إضافة '...' إذا كانت الصفحة الحالية أكبر من 2
+    if (currentPage > 2) {
+      const dots = document.createElement("span");
+      dots.textContent = "...";
+      pageNumbersContainer.appendChild(dots);
+    }
+
+    // إضافة الصفحة الحالية مع تمييزها كـ 'active'
+    const currentPageElement = document.createElement("span");
+    currentPageElement.textContent = currentPage;
+    currentPageElement.classList.add("active");
+    pageNumbersContainer.appendChild(currentPageElement);
+
+    // إضافة '...' إذا كانت الصفحة الحالية أقل من ما قبل الأخيرة
+    if (currentPage < totalPages - 1) {
+      const dots = document.createElement("span");
+      dots.textContent = "...";
+      pageNumbersContainer.appendChild(dots);
+    }
+
+    // إظهار الصفحة الأخيرة إذا لم تكن الصفحة الحالية هي الأخيرة
+    if (currentPage < totalPages) {
+      const lastPage = document.createElement("span");
+      lastPage.textContent = totalPages;
+      lastPage.addEventListener("click", () => {
+        currentPage = totalPages;
+        renderItems(currentPage);
+        updatePaginationButtons();
+      });
+      pageNumbersContainer.appendChild(lastPage);
+    }
   }
 };
 
+// prev Button
+// عند الضغط على زر "السابق"
 prevButton.addEventListener("click", () => {
-  console.log("object----");
+  // تحقق مما إذا كانت الصفحة الحالية أكبر من 1
+  // إذا كانت كذلك، انتقل إلى الصفحة السابقة
   if (currentPage > 1) {
-    currentPage--;
-    renderItems(currentPage);
-    updatePaginationButtons();
+    currentPage--; // تقليل رقم الصفحة الحالية
+    renderItems(currentPage); // عرض العناصر للصفحة الحالية الجديدة
+    updatePaginationButtons(); // تحديث أزرار الترقيم بناءً على الصفحة الحالية الجديدة
   }
 });
 
+// next Button
 nextButton.addEventListener("click", () => {
-  console.log("object+++");
-
+  // تحقق مما إذا كانت الصفحة الحالية أقل من إجمالي الصفحات
+  // إذا كانت كذلك، انتقل إلى الصفحة التالية
   if (currentPage < totalPages) {
-    currentPage++;
-    renderItems(currentPage);
-    updatePaginationButtons();
+    currentPage++; // زيادة رقم الصفحة الحالية
+    renderItems(currentPage); // عرض العناصر للصفحة الحالية الجديدة
+    updatePaginationButtons(); // تحديث أزرار الترقيم بناءً على الصفحة الحالية الجديدة
   }
 });
 

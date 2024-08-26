@@ -224,7 +224,7 @@ header .img-header .img {
   height: 85%;
   border-radius: 50%;
   overflow: hidden;
-  background: #f8f9fa;
+  background: #606870ba;
   box-shadow: 1px 1px 1px 9px var(--primary-color);
 }
 
