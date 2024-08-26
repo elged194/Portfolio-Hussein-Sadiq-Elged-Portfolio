@@ -44,9 +44,11 @@ h2 {
   font-family: "Russo One", sans-serif;
 }
 
-a , button{
+a,
+button {
   transition: all 0.3s ease;
 }
+
 /* animated */
 .animated {
   animation-delay: 1.5s;
@@ -522,6 +524,7 @@ header .text-heder .font i {
   background-color: var(--primary-color);
   color: var(--white);
 }
+
 /* --------------- Projects --------------*/
 /* --------------- form ---------------*/
 .Contact {
@@ -557,7 +560,7 @@ header .text-heder .font i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15px ;
+  padding: 15px;
 }
 
 .Contact .form-control:focus {
@@ -651,17 +654,21 @@ footer hr {
 /* -------------- scroll-up ------------- */
 .scroll-up-btn {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 12px;
+  right: 12px;
   cursor: pointer;
   display: none;
-  font-size: 24px;
   color: rgb(108 117 125);
-  background-color: transparent;
+  background-color: var(--white);
   border: 2px solid #6c757d;
   padding: 1px 8px;
   z-index: 1;
   border-radius: 5px;
+  padding: 3px 7px;
+}
+
+.scroll-up-btn i {
+  font-size: 30px;
 }
 
 /* -------------- scroll-up ------------- */
