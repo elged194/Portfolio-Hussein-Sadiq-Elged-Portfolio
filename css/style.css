@@ -1,6 +1,14 @@
 body {
   max-width: 100%;
   overflow-x: hidden;
+  color: #333;
+}
+
+:root {
+  --primary-color: #495057;
+  /* --primary-color: #4a5a57; */
+  --secondary: #db671a;
+  --white: #fff;
 }
 
 .row {
@@ -12,7 +20,7 @@ img {
 }
 
 .title {
-  color: #495057;
+  color: var(--primary-color);
   text-align: center;
   font-weight: bold;
   margin-bottom: 25px;
@@ -36,6 +44,9 @@ h2 {
   font-family: "Russo One", sans-serif;
 }
 
+a , button{
+  transition: all 0.3s ease;
+}
 /* animated */
 .animated {
   animation-delay: 1.5s;
@@ -59,7 +70,7 @@ body.no-scroll {
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 
 .wrapper {
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .preloader {
@@ -69,7 +80,7 @@ body.no-scroll {
   z-index: 999999999;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: var(--white);
   overflow: hidden;
 }
 
@@ -91,7 +102,7 @@ svg {
 svg text {
   animation: stroke 5s infinite alternate;
   stroke-width: 2;
-  stroke: #495057;
+  stroke: var(--primary-color);
   font-size: 100px;
 }
 
@@ -136,22 +147,23 @@ svg text {
 }
 
 .navbar.navbar-expand-lg.bg-body-tertiary {
-  background: #495057 !important;
+  background: var(--primary-color) !important;
   padding: 0px 10px;
 }
 
 .bg-body-tertiary .nav-link {
-  color: #fff;
+  color: var(--white);
   font-size: 18px;
   font-family: "Russo One", sans-serif;
+  transition: all .3s;
 }
 
 .bg-body-tertiary .nav-link:hover {
-  color: #db671a;
+  color: var(--secondary);
 }
 
 .bg-body-tertiary .navbar-brand {
-  color: #fff !important;
+  color: var(--white) !important;
   width: 25%;
 }
 
@@ -175,8 +187,8 @@ svg text {
   box-shadow: none;
 }
 
-.bx-menu-alt-right{
-  color: #fff;
+.bx-menu-alt-right {
+  color: var(--white);
   font-size: 30px;
 }
 
@@ -196,7 +208,7 @@ header .background-header {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #495057;
+  background-color: var(--primary-color);
   clip-path: polygon(0 0%, 100% 0, 100% 1%, 0 100%);
   z-index: -1;
 }
@@ -213,7 +225,7 @@ header .img-header .img {
   border-radius: 50%;
   overflow: hidden;
   background: #f8f9fa;
-  box-shadow: 1px 1px 1px 9px #495057;
+  box-shadow: 1px 1px 1px 9px var(--primary-color);
 }
 
 header .text-heder {
@@ -224,7 +236,7 @@ header .text-heder {
 
 header .text-heder .text h1,
 header .text-heder h3 {
-  color: #db671a;
+  color: var(--secondary);
   font-weight: bold;
   font-family: "Russo One", sans-serif;
 }
@@ -239,8 +251,8 @@ header .text-heder .font {
 header .text-heder .font i {
   padding: 10px;
   font-size: 30px;
-  border: solid 1px #db671a;
-  color: #db671a;
+  border: solid 1px var(--secondary);
+  color: var(--secondary);
   border-radius: 10px;
   margin-right: 10px;
 }
@@ -281,23 +293,23 @@ header .text-heder .font i {
 
 /* #6c757d */
 .About .btn {
-  background-color: #495057;
+  background-color: var(--primary-color);
   padding: 8px 10px;
-  color: #fff;
+  color: var(--white);
   font-weight: bold;
   border: none;
 }
 
 .About .btn:hover {
   background-color: transparent !important;
-  color: #495057;
-  border: 1px solid #495057;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 
 /* modl */
 .About .modal i {
   font-size: 30px;
-  color: #495057;
+  color: var(--primary-color);
 }
 
 .About .modal .row h4 {
@@ -320,20 +332,22 @@ header .text-heder .font i {
 .Skills .item {
   display: flex;
   align-items: center;
-  border: solid 1px #495057;
-  color: #495057;
+  border: solid 1px var(--primary-color);
+  color: var(--primary-color);
   border-radius: 5px;
   transition: all 1s;
   cursor: pointer;
 }
 
 .Skills .item:hover {
-  background-color: #495057;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--white);
 }
-.Skills .titel-skil{
+
+.Skills .titel-skil {
   font-weight: bold !important;
 }
+
 .Skills p {
   margin: 0;
 }
@@ -353,7 +367,7 @@ header .text-heder .font i {
   border: none;
   position: relative;
   overflow: hidden;
-  background-color: #495057;
+  background-color: var(--primary-color);
   transition: all 1s;
   margin: 8px 0;
 }
@@ -369,8 +383,8 @@ header .text-heder .font i {
 }
 
 .Projects .btn {
-  background-color: #495057;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--white);
   border-radius: 0;
   padding: 5px 15px;
   border: none;
@@ -382,6 +396,7 @@ header .text-heder .font i {
 
 .Projects .modal .btn:hover {
   background-color: #6c757d;
+  transition: all .3s ease-in-out;
 }
 
 .Projects .card .bt {
@@ -391,7 +406,7 @@ header .text-heder .font i {
 }
 
 .Projects .card .card-body {
-  background-color: #fff;
+  background-color: var(--white);
   /* margin-top: -120px; */
   z-index: 1;
   padding: 8px;
@@ -409,7 +424,7 @@ header .text-heder .font i {
 }
 
 .Projects .card .card-title .fa-solid {
-  color: #495057;
+  color: var(--primary-color);
 }
 
 /* modal */
@@ -455,7 +470,7 @@ header .text-heder .font i {
 }
 
 .Projects .modal .img-Nav h4 {
-  color: #495057;
+  color: var(--primary-color);
   font-weight: bold;
   position: relative;
   padding-bottom: 5px;
@@ -469,10 +484,44 @@ header .text-heder .font i {
   bottom: 0;
   left: 0;
   width: 80%;
-  background-color: #495057;
+  background-color: var(--primary-color);
   height: 2px;
 }
 
+.Projects .pagination {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.Projects .pagination button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+}
+
+.Projects .pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.Projects .pagination span {
+  margin: 0 5px;
+  cursor: pointer;
+  padding: 10px 15px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+}
+
+.Projects .pagination .active {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
 /* --------------- Projects --------------*/
 /* --------------- form ---------------*/
 .Contact {
@@ -486,14 +535,14 @@ header .text-heder .font i {
 }
 
 .Contact p {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .Contact .font i {
   font-size: 25px;
   padding: 12px;
-  border: solid 1px #495057;
-  color: #495057;
+  border: solid 1px var(--primary-color);
+  color: var(--primary-color);
   border-radius: 10px;
   margin: 0 4px 15px 4px;
 }
@@ -508,16 +557,16 @@ header .text-heder .font i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15px 39px;
+  padding: 15px ;
 }
 
 .Contact .form-control:focus {
-  border-color: #495057;
-  box-shadow: 0 0 0 0.15rem #495057;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.15rem var(--primary-color);
 }
 
 .Contact .form-control {
-  border: solid 1px #495057;
+  border: solid 1px var(--primary-color);
 }
 
 .Contact .btn {
@@ -527,28 +576,30 @@ header .text-heder .font i {
   border: solid 1px #6c757d;
   text-align: center;
   font-weight: bold;
-  color: #fff;
+  color: var(--white);
 }
 
 .Contact .btn:hover {
   background-color: transparent;
-  border: solid 1px #495057;
+  border: solid 1px var(--primary-color);
+  transition: all .3s ease-in-out;
+
 }
 
 .Contact .form-floating>label {
-  color: #495057;
+  color: var(--primary-color);
 }
 
 .Contact .text-Contact {
-  height: 600px;
-  width: 100%;
-  background: linear-gradient(to right, #495057, #6c757d);
+  height: 500px;
+  width: 85%;
+  background: linear-gradient(to right, var(--primary-color), #6c757d);
   border-radius: 15px 150px 150px 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
-  padding: 15px;
+  color: var(--white);
+  padding: 25px;
 }
 
 .Contact .text-Contact .text {
@@ -558,8 +609,8 @@ header .text-heder .font i {
 /* --------------- form ---------------*/
 /*  */
 footer {
-  background-color: #495057;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--white);
   padding: 15px;
 }
 
@@ -588,7 +639,7 @@ footer .row div {
 
 footer a {
   text-decoration: none;
-  color: #fff;
+  color: var(--white);
 }
 
 footer hr {

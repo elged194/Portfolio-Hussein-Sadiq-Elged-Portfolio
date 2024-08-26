@@ -64,29 +64,29 @@ document.addEventListener("DOMContentLoaded", function () {
 /* -------------- WOW ------------- */
 
 /* -------------- Skills width ------------- */
-$(() => {
-  if ($(window).width() > 768) {
-    $(".Skills").height($(window).height()).css({
-      margin: "0",
-      display: "flex",
-      flexWrap: "wrap",
-      justifyContent: " center",
-      alignItems: "center",
-    });
-  }
+// $(() => {
+//   if ($(window).width() > 768) {
+//     $(".Skills").height($(window).height()).css({
+//       margin: "0",
+//       display: "flex",
+//       flexWrap: "wrap",
+//       justifyContent: " center",
+//       alignItems: "center",
+//     });
+//   }
 
-  $(window).resize(() => {
-    if ($(window).width() > 768) {
-      $(".Skills").height($(window).height()).css({
-        margin: "0",
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: " center",
-        alignItems: "center",
-      });
-    }
-  });
-});
+//   $(window).resize(() => {
+//     if ($(window).width() > 768) {
+//       $(".Skills").height($(window).height()).css({
+//         margin: "0",
+//         display: "flex",
+//         flexWrap: "wrap",
+//         justifyContent: " center",
+//         alignItems: "center",
+//       });
+//     }
+//   });
+// });
 
 /* -------------- / Skills Items / ------------- */
 const skills_page = document.querySelector("#Skills .row");
@@ -129,6 +129,14 @@ const skillsItems = [
     name: "Bootstrap",
     description: "Advanced level",
     icon: `<i class='bx bxl-bootstrap'   ></i>`,
+  },
+
+  // tailwind-css
+  {
+    id: 17,
+    name: "Tailwind Css",
+    description: "Advanced level",
+    icon: `<i class='bx bxl-tailwind-css'   ></i>`,
   },
 
   // Material UI,
@@ -239,253 +247,6 @@ skills_page.innerHTML += skillsItems
 
 /* -------------- / Skills Items / ------------- */
 
-/* -------------- / Projects Items / ------------- */
-const Projects_Page = document.querySelector("#Projects .row");
-
-// Projects Items
-const ProjectsItems = [
-  // VIX Template
-  {
-    title: "VIX Template",
-    description: `
-      It is a comprehensive store for purchasing clothes and shoes
-      for men, women, and children. We provide payment methods and
-      use a responsive design for all screens..
-    `,
-    image: "img/Projects/VIX.jpg",
-    link_Live: "https://elged194.github.io/VIX-Online-Stor/",
-    link_Code: "https://github.com/elged194",
-    data_target: "#VIX",
-  },
-
-  // Course Academy (NEXT)
-  {
-    title: "Course Academy (NEXT)",
-    description: `
-       Handling the API: The project showcases my ability to interact with APIs using JSON Server as a
-       mediator between the frontend and the database. I fetch data from the API using HTTP requests like
-       GET, send data using POST, update it using PUT, and delete it using DELETE.
-      `,
-    image: "img/Projects/Course Academy/home.jpeg",
-    link_Live: "https://github.com/elged194/Course-Academy-NEXT",
-    link_Code: "https://github.com/elged194",
-    data_target: "#Course-Academy",
-  },
-
-  // Task Management (React)
-  {
-    title: "Task Management (React)",
-    description: `
-       This site manages daily and monthly tasks and allows saving, editing and editing data using the
-        <b> Firebase </b>
-      and I recommend taking a look at it
-      `,
-    image: "img/Projects/Task Management/Screenshot_17-7.jpeg",
-    link_Live: "https://github.com/elged194/Task-Management-React",
-    link_Code: "https://github.com/elged194",
-    data_target: "#Task-Management",
-  },
-
-  //E-Commerce-Shop (React)
-  {
-    title: "E-Commerce Shop (React)",
-    description: `
-         It is a complete online store built using React and Redux
-         The product search feature has been added by name
-         The filter feature has been added according to the price
-         It is designed to be responsive on all different screen sizes
-        `,
-    image: "img/Projects/Full Online Store/2.jpeg",
-    link_Live: "https://e-commerce-shop-react.netlify.app/",
-    link_Code: "https://github.com/elged194/E-Commerce-Shop",
-    data_target: "#E-Commerce-Shop",
-  },
-
-  //Purchases Calculator (React)
-  {
-    title: "Purchases Calculator (React)",
-    description: `
-           It is a site that calculates your daily or monthly purchases
-            Json server was used in this process
-          `,
-    image: "img/Projects/Purchases Calculator/1.jpeg",
-    link_Live: "https://e-commerce-shop-react.netlify.app/",
-    link_Code: "https://github.com/elged194/E-Commerce-Shop",
-    data_target: "#Purchases",
-  },
-
-  //Yeshtery Online Stor (React)
-  {
-    title: "Yeshtery Online Stor (React)",
-    description: `
-       It is a clothing store based on a marketing cart and was created using the React, js and was based on
-        the props
-      `,
-    image: "img/Projects/Yeshtery/1.jpeg",
-    link_Live: "https://github.com/elged194/Yeshtery-Online-Stor-React",
-    link_Code: "https://github.com/elged194/E-Commerce-Shop",
-    data_target: "#Yeshtery",
-  },
-
-  // YOUR CHIF Template
-  {
-    title: "YOUR CHIF",
-    description: `
-      t is the restaurant’s website that displays all the menu
-       items, the chef and the workers, and introduces the restaurant
-       and the achievements that have been achieved.
-    `,
-    image: "img/Projects/Chif.png",
-    link_Live: "",
-    link_Code: "https://github.com/elged194",
-    data_target: "#YOUR-CHIF",
-  },
-
-  // Multi Form
-  {
-    title: "Multi Form",
-    description: `
-        It is a multi-Form website
-        Created in a smart way based on your product choices, a purchase invoice is displayed
-        And it was created to be responsive on all screens
-      `,
-    image: "img/Projects/Multi Form/1.jpeg",
-    link_Live: "https://elged194.github.io/Task-Multi-Form/",
-    link_Code: "https://github.com/elged194/Task-Multi-Form",
-    data_target: "#Multi-Form",
-  },
-
-  // Lawyer Template
-  {
-    title: "Lawyer Template",
-    image: "img/Projects/Lawyer.jpg",
-    description: `
-        A lawyer's website to display the work carried out by the
-                  lawyer's office and the work team, and responsive screens are
-                  used on this website .
-      `,
-    link_Live: "https://elged194.github.io/Lawyer-Template-/",
-    link_Code: "https://github.com/elged194",
-    data_target: "#Lawyer",
-  },
-
-  // Reve Tive.
-  {
-    title: "Reve Tive.",
-    image: "img/Projects/Reve Tive/1.png",
-    description: `
-     A Reve Tive website to display the work carried out by the
-      Reve Tive's office and the work team, and responsive screens
-      are used on this website .
-    `,
-    link_Live: "",
-    link_Code: "https://github.com/elged194",
-    data_target: "#",
-  },
-
-  // New CRUDS SYSTEM
-  {
-    title: "New CRUDS SYSTEM",
-    image: "img/Projects/New CRUDS/1.jpeg",
-    description: `
-      t is the location of the product and store management system
-      It adds the products, prices and quantity of the store and there is a feature of adding, playing,
-      modifying and spraying by name
-      `,
-    link_Live: "https://elged194.github.io/New-CRUD-SYSTEM/",
-    link_Code: "https://github.com/elged194/New-CRUD-SYSTEM",
-    data_target: "#new-CRUDS",
-  },
-
-  // CRUDS SYSTEM
-  {
-    title: "CRUDS SYSTEM",
-    image: "img/Projects/CRUDS/CRUDS1.jpeg",
-    description: `
-      A CRUDS website to display the work carried out by the CRUDS
-                  office and the work team, and responsive screens are used on
-                  this website .
-      `,
-    link_Live: "https://elged194.github.io/CRUDS/",
-    link_Code: "https://github.com/elged194",
-    data_target: "#CRUDS",
-  },
-
-  // A Cook.
-  {
-    title: "A Cook Template .",
-    image: "img/Projects/A Cook/1.jpg",
-    description: `
-      A Cook website to display the work carried out by the A Cook
-                  office and the work team, and responsive screens are used on
-                  this website .
-    `,
-    link_Live: "",
-    link_Code: "https://github.com/elged194",
-    data_target: "#A-Cook",
-  },
-
-  // Div Drive
-  {
-    title: "A Cook Template .",
-    image: "img/Projects/div drive/1.webp",
-    description: `
-     A Div Drive website to display the work carried out by the Div
-                  Drive office and the work team, and responsive screens are
-                  used on this website .
-      `,
-    link_Live: "",
-    link_Code: "https://github.com/elged194",
-    data_target: "#Div-Drive",
-  },
-
-  // Bank
-  {
-    title: "Electronic Bank .",
-    image: "img/Projects/Bank/1.webp",
-    description: `
-      A Bank website to display the work carried out by the Bank
-                  office and the work team, and responsive screens are used on
-                  this website .
-        `,
-    link_Live: "",
-    link_Code: "https://github.com/elged194",
-    data_target: "#Bank",
-  },
-];
-
-// paginate
-
-Projects_Page.innerHTML += ProjectsItems.map((item) => {
-  return `
-        <div class="col-lg-4 col-md-6 col-12">
-          <div class="card">
-            <img src="${item.image}" class="card-img-top" alt="${item.title}" />
-
-            <div class="card-body">
-              <div class="card-title">
-                <h5 class="">${item.title}</h5>
-                <div>
-                  <i class="bx bx-star"></i>
-                  <i class="bx bx-star"></i>
-                  <i class="bx bx-star"></i>
-                  <i class="bx bx-star"></i>
-                  <i class="bx bx-star-half-stroke"></i>
-                </div>
-              </div>
-              <p class="card-text">
-                ${item.description}
-              </p>
-              <a class="btn" href="${item.link_Live}">GO Live Demo</a>
-              <a class="btn bt" data-bs-toggle="modal" data-bs-target="${item.data_target}" href="">Go Viewing</a>
-            </div>
-          </div>
-        </div>
-      `;
-}).join("");
-
-/* -------------- / Projects Items / ------------- */
-
 /* -------------- / Projects modal / ------------- */
 const body = document.querySelector("#Projects");
 const dataProjct = [
@@ -555,7 +316,7 @@ const dataProjct = [
     img_project: [
       "img/Projects/Course Academy/home.jpeg",
       "img/Projects/Course Academy/login.jpeg",
-      "img/Projects/Course Academy/product item Name.jpeg",
+      "img/Projects/Course Academy/product item.jpeg",
       "img/Projects/Course Academy/check out.jpeg",
       "img/Projects/Course Academy/cart.jpeg",
       "img/Projects/Course Academy/Dashboard.jpeg.",
@@ -932,3 +693,312 @@ body.innerHTML += dataProjct
   })
   .join("");
 /* -------------- / Projects modal / ------------- */
+
+/* -------------- / Projects Items / ------------- */
+const itemsContainer = document.getElementById("projectsItems");
+const prevButton = document.getElementById("prevButton");
+const nextButton = document.getElementById("nextButton");
+const pageNumbersContainer = document.getElementById("pageNumbers");
+
+// Projects Items
+const ProjectsItems = [
+  // VIX Template
+  {
+    title: "VIX Template",
+    description: `
+      It is a comprehensive store for purchasing clothes and shoes
+      for men, women, and children. We provide payment methods and
+      use a responsive design for all screens..
+    `,
+    image: "img/Projects/VIX.jpg",
+    link_Live: "https://elged194.github.io/VIX-Online-Stor/",
+    link_Code: "https://github.com/elged194",
+    data_target: "#VIX",
+  },
+
+  // Course Academy (NEXT)
+  {
+    title: "Course Academy (NEXT)",
+    description: `
+       Handling the API: The project showcases my ability to interact with APIs using JSON Server as a
+       mediator between the frontend and the database. I fetch data from the API using HTTP requests like
+       GET, send data using POST, update it using PUT, and delete it using DELETE.
+      `,
+    image: "img/Projects/Course Academy/home.jpeg",
+    link_Live: "https://github.com/elged194/Course-Academy-NEXT",
+    link_Code: "https://github.com/elged194",
+    data_target: "#Course-Academy",
+  },
+
+  // Task Management (React)
+  {
+    title: "Task Management (React)",
+    description: `
+       This site manages daily and monthly tasks and allows saving, editing and editing data using the
+        <b> Firebase </b>
+      and I recommend taking a look at it
+      `,
+    image: "img/Projects/Task Management/Screenshot_17-7.jpeg",
+    link_Live: "https://github.com/elged194/Task-Management-React",
+    link_Code: "https://github.com/elged194",
+    data_target: "#Task-Management",
+  },
+
+  //E-Commerce-Shop (React)
+  {
+    title: "E-Commerce Shop (React)",
+    description: `
+         It is a complete online store built using React and Redux
+         The product search feature has been added by name
+         The filter feature has been added according to the price
+         It is designed to be responsive on all different screen sizes
+        `,
+    image: "img/Projects/Full Online Store/2.jpeg",
+    link_Live: "https://e-commerce-shop-react.netlify.app/",
+    link_Code: "https://github.com/elged194/E-Commerce-Shop",
+    data_target: "#E-Commerce-Shop",
+  },
+
+  //Purchases Calculator (React)
+  {
+    title: "Purchases Calculator (React)",
+    description: `
+           It is a site that calculates your daily or monthly purchases
+            Json server was used in this process
+          `,
+    image: "img/Projects/Purchases Calculator/1.jpeg",
+    link_Live: "https://e-commerce-shop-react.netlify.app/",
+    link_Code: "https://github.com/elged194/E-Commerce-Shop",
+    data_target: "#Purchases",
+  },
+
+  //Yeshtery Online Stor (React)
+  {
+    title: "Yeshtery Online Stor (React)",
+    description: `
+       It is a clothing store based on a marketing cart and was created using the React, js and was based on
+        the props
+      `,
+    image: "img/Projects/Yeshtery/1.jpeg",
+    link_Live: "https://github.com/elged194/Yeshtery-Online-Stor-React",
+    link_Code: "https://github.com/elged194/E-Commerce-Shop",
+    data_target: "#Yeshtery",
+  },
+
+  // YOUR CHIF Template
+  {
+    title: "YOUR CHIF",
+    description: `
+      t is the restaurant’s website that displays all the menu
+       items, the chef and the workers, and introduces the restaurant
+       and the achievements that have been achieved.
+    `,
+    image: "img/Projects/Chif.png",
+    link_Live: "",
+    link_Code: "https://github.com/elged194",
+    data_target: "#YOUR-CHIF",
+  },
+
+  // Multi Form
+  {
+    title: "Multi Form",
+    description: `
+        It is a multi-Form website
+        Created in a smart way based on your product choices, a purchase invoice is displayed
+        And it was created to be responsive on all screens
+      `,
+    image: "img/Projects/Multi Form/1.jpeg",
+    link_Live: "https://elged194.github.io/Task-Multi-Form/",
+    link_Code: "https://github.com/elged194/Task-Multi-Form",
+    data_target: "#Multi-Form",
+  },
+
+  // Lawyer Template
+  {
+    title: "Lawyer Template",
+    image: "img/Projects/Lawyer.jpg",
+    description: `
+        A lawyer's website to display the work carried out by the
+                  lawyer's office and the work team, and responsive screens are
+                  used on this website .
+      `,
+    link_Live: "https://elged194.github.io/Lawyer-Template-/",
+    link_Code: "https://github.com/elged194",
+    data_target: "#Lawyer",
+  },
+
+  // Reve Tive.
+  {
+    title: "Reve Tive.",
+    image: "img/Projects/Reve Tive/1.png",
+    description: `
+     A Reve Tive website to display the work carried out by the
+      Reve Tive's office and the work team, and responsive screens
+      are used on this website .
+    `,
+    link_Live: "",
+    link_Code: "https://github.com/elged194",
+    data_target: "#",
+  },
+
+  // New CRUDS SYSTEM
+  {
+    title: "New CRUDS SYSTEM",
+    image: "img/Projects/New CRUDS/1.jpeg",
+    description: `
+      t is the location of the product and store management system
+      It adds the products, prices and quantity of the store and there is a feature of adding, playing,
+      modifying and spraying by name
+      `,
+    link_Live: "https://elged194.github.io/New-CRUD-SYSTEM/",
+    link_Code: "https://github.com/elged194/New-CRUD-SYSTEM",
+    data_target: "#new-CRUDS",
+  },
+
+  // CRUDS SYSTEM
+  {
+    title: "CRUDS SYSTEM",
+    image: "img/Projects/CRUDS/CRUDS1.jpeg",
+    description: `
+      A CRUDS website to display the work carried out by the CRUDS
+                  office and the work team, and responsive screens are used on
+                  this website .
+      `,
+    link_Live: "https://elged194.github.io/CRUDS/",
+    link_Code: "https://github.com/elged194",
+    data_target: "#CRUDS",
+  },
+
+  // A Cook.
+  {
+    title: "A Cook Template .",
+    image: "img/Projects/A Cook/1.jpg",
+    description: `
+      A Cook website to display the work carried out by the A Cook
+                  office and the work team, and responsive screens are used on
+                  this website .
+    `,
+    link_Live: "",
+    link_Code: "https://github.com/elged194",
+    data_target: "#A-Cook",
+  },
+
+  // Div Drive
+  {
+    title: "A Cook Template .",
+    image: "img/Projects/div drive/1.webp",
+    description: `
+     A Div Drive website to display the work carried out by the Div
+                  Drive office and the work team, and responsive screens are
+                  used on this website .
+      `,
+    link_Live: "",
+    link_Code: "https://github.com/elged194",
+    data_target: "#Div-Drive",
+  },
+
+  // Bank
+  {
+    title: "Electronic Bank .",
+    image: "img/Projects/Bank/1.webp",
+    description: `
+      A Bank website to display the work carried out by the Bank
+                  office and the work team, and responsive screens are used on
+                  this website .
+        `,
+    link_Live: "",
+    link_Code: "https://github.com/elged194",
+    data_target: "#Bank",
+  },
+];
+
+// --------/ paginate /---------
+let itemsPerPage = 3;
+let currentPage = 1;
+const totalPages = Math.ceil(ProjectsItems.length / itemsPerPage);
+
+
+const paginate = (items, pageNumber, itemsPerPage) => {
+  const start = (pageNumber - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  return items.slice(start, end);
+};
+
+const renderItems = (page) => {
+  itemsContainer.innerHTML = paginate(ProjectsItems, page, itemsPerPage)
+    .map((item) => {
+      return `
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card">
+            <img src="${item.image}" class="card-img-top" alt="${item.title}" />
+
+            <div class="card-body">
+              <div class="card-title">
+                <h5 class="">${item.title}</h5>
+                <div>
+                  <i class="bx bx-star"></i>
+                  <i class="bx bx-star"></i>
+                  <i class="bx bx-star"></i>
+                  <i class="bx bx-star"></i>
+                  <i class="bx bx-star-half-stroke"></i>
+                </div>
+              </div>
+              <p class="card-text">
+                ${item.description}
+              </p>
+              <a class="btn" href="${item.link_Live}">GO Live Demo</a>
+              <a class="btn bt" data-bs-toggle="modal" data-bs-target="${item.data_target}" href="">Go Viewing</a>
+            </div>
+          </div>
+        </div>
+      `;
+    })
+    .join("");
+};
+
+const updatePaginationButtons = () => {
+  prevButton.disabled = currentPage === 1;
+  nextButton.disabled = currentPage === totalPages;
+  renderPageNumbers();
+};
+
+const renderPageNumbers = () => {
+  pageNumbersContainer.innerHTML = "";
+  for (let i = 1; i <= totalPages; i++) {
+    const pageNumber = document.createElement("span");
+    pageNumber.textContent = i;
+    if (i === currentPage) {
+      pageNumber.classList.add("active");
+    }
+    pageNumber.addEventListener("click", () => {
+      currentPage = i;
+      renderItems(currentPage);
+      updatePaginationButtons();
+    });
+    pageNumbersContainer.appendChild(pageNumber);
+  }
+};
+
+prevButton.addEventListener("click", () => {
+  console.log("object----");
+  if (currentPage > 1) {
+    currentPage--;
+    renderItems(currentPage);
+    updatePaginationButtons();
+  }
+});
+
+nextButton.addEventListener("click", () => {
+  console.log("object+++");
+
+  if (currentPage < totalPages) {
+    currentPage++;
+    renderItems(currentPage);
+    updatePaginationButtons();
+  }
+});
+
+// Initial Render
+renderItems(currentPage);
+updatePaginationButtons();
+/* -------------- / Projects Items / ------------- */
