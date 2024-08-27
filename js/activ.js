@@ -63,30 +63,26 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 /* -------------- WOW ------------- */
 
-/* -------------- Skills width ------------- */
-// $(() => {
-//   if ($(window).width() > 768) {
-//     $(".Skills").height($(window).height()).css({
-//       margin: "0",
-//       display: "flex",
-//       flexWrap: "wrap",
-//       justifyContent: " center",
-//       alignItems: "center",
-//     });
-//   }
+/* --------------/ الارسال تالي الGmail /------------- */
 
-//   $(window).resize(() => {
-//     if ($(window).width() > 768) {
-//       $(".Skills").height($(window).height()).css({
-//         margin: "0",
-//         display: "flex",
-//         flexWrap: "wrap",
-//         justifyContent: " center",
-//         alignItems: "center",
-//       });
-//     }
-//   });
-// });
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); // منع إعادة تحميل الصفحة
+
+  // إرسال البيانات باستخدام EmailJS
+  emailjs.sendForm("service_h4n0hf4", "template_z2i76x9", this).then(
+    function () {
+      alert("Email sent successfully!");
+      // إعادة تعيين الحقول بعد النجاح
+      form.reset();
+    },
+    function (error) {
+      console.log("Failed to send email:", error);
+      alert("Failed to send email, please try again.");
+    }
+  );
+});
 
 /* -------------- / Skills Items / ------------- */
 const skills_page = document.querySelector("#Skills .row");
@@ -639,7 +635,6 @@ the props
     ],
   },
 
-
   // اصيل
   {
     id_name: "asil",
@@ -930,17 +925,17 @@ const ProjectsItems = [
     link_Code: "https://github.com/elged194",
     data_target: "#Bank",
   },
-    // Asil
-    {
-      title: "اصـيـل للاعشاب",
-      image: "img/Projects/اصيل/1.jpg",
-      description: `
+  // Asil
+  {
+    title: "اصـيـل للاعشاب",
+    image: "img/Projects/اصيل/1.jpg",
+    description: `
         هو موقع لعضرض منتج اعشاب وطلب المنتج ويتم الارسال الي ملف اكسيل google sheets
           `,
-      link_Live: "",
-      link_Code: "https://asil.space/",
-      data_target: "#asil",
-    },
+    link_Live: "",
+    link_Code: "https://asil.space/",
+    data_target: "#asil",
+  },
 ];
 
 // --------/ paginate /---------

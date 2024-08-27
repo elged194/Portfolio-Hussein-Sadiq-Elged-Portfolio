@@ -429,9 +429,10 @@
               </div>
             </div>
           </div>
+
           <!--  -->
           <div class="col-md-6 col-sm-12">
-            <form>
+            <form id="contact-form">
               <div class="font">
                 <h2 class="title">Contact <span>Me</span></h2>
 
@@ -461,30 +462,38 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="Name"
-                  placeholder="Name"
+                  id="name"
+                  name="name"
+                  placeholder="Your Name"
+                  required
                 />
-                <label for="Name">Name</label>
+                <label for="name">Your Name</label>
               </div>
+
               <!--  -->
               <div class="form-floating mb-3 col-12">
                 <input
                   type="email"
                   class="form-control"
                   id="email"
+                  name="email"
                   placeholder="name@gmail.com"
+                  required
                 />
-                <label for="email">Email Address</label>
+                <label for="email">Your Email Address</label>
               </div>
+
               <!--  -->
               <div class="form-floating col-12">
                 <textarea
                   class="form-control"
                   placeholder="Leave a comment here"
                   id="floatingTextarea"
+                  name="message"
                 ></textarea>
                 <label for="floatingTextarea">Comments</label>
               </div>
+
               <!--  -->
               <div class="col-4 mt-3">
                 <button type="submit" class="btn">Sign in</button>
@@ -571,6 +580,17 @@
     <!-- wow -->
     <script src="js/wow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <!-- gmail EmailJS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.emailjs.com/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("dOBtMWoLgJccAxBFl");
+      })();
+    </script>
 
     <!-- --------------------------------------------------------- -->
   </body>
