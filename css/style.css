@@ -46,9 +46,12 @@ h2 {
 
 a,
 button {
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out !important;
 }
-
+a:hover,
+button:hover {
+  transition: all 0.3s ease-in-out !important;
+}
 /* animated */
 .animated {
   animation-delay: 1.5s;
@@ -279,9 +282,9 @@ header .text-heder .font i {
   width: 91%;
 }
 
-.About .text-About .text .p {
+/* .About .text-About .text .p {
   font-size: 20px;
-}
+} */
 
 .About .text-About {
   display: flex;
@@ -377,7 +380,8 @@ header .text-heder .font i {
 .Projects .card img {
   opacity: 0.7;
   object-fit: cover;
-  padding: 15px;
+  padding: 10px;
+    border-radius: 13px;
   max-height: 250px;
   min-height: 250px;
   transition: all 1s;
@@ -646,7 +650,7 @@ footer a {
 }
 
 footer hr {
-  width: 70%;
+  width: 80%;
   text-align: center;
   margin: 1rem auto;
 }
