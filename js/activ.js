@@ -311,16 +311,17 @@ const dataProjct = [
     tools: ["NEXT.js", " Json Server "],
     img_project: [
       "img/Projects/Course Academy/home.jpeg",
+      "img/Projects/Course Academy/not login.jpeg",
       "img/Projects/Course Academy/login.jpeg",
+      "img/Projects/Course Academy/Register.jpeg",
+      "img/Projects/Course Academy/New Product.jpeg",
       "img/Projects/Course Academy/product item.jpeg",
-      "img/Projects/Course Academy/check out.jpeg",
+      "img/Projects/Course Academy/my Favorite.jpeg",
       "img/Projects/Course Academy/cart.jpeg",
-      "img/Projects/Course Academy/Dashboard.jpeg.",
-      "img/Projects/Course Academy/add item.jpeg",
+      "img/Projects/Course Academy/check out.jpeg",
       "img/Projects/Course Academy/profile.jpeg",
-      "img/Projects/Course Academy/Screenshot_25-7-2024_20331_localhost.jpeg",
-      "img/Projects/Course Academy/Screenshot_25-7-2024_20331_localhost.jpeg",
-      "img/Projects/Course Academy/Screenshot_25-7-2024_20523_localhost.jpeg",
+      "img/Projects/Course Academy/order Profile.jpeg",
+      "img/Projects/Course Academy/Dashboard.jpeg.",
     ],
   },
 
@@ -693,7 +694,7 @@ body.innerHTML += dataProjct
             <div class="col-lg-8 col-12 img-Nav">
               <h4 class="mt-0">Home Page</h4>
               ${item.img_project
-                .map((img) => `<img src="${img}" alt="" />`)
+                .map((img) => `<img class="my-3" src="${img}" alt="" /> <hr> `)
                 .join("")}
             </div>
           </div>
